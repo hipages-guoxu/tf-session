@@ -19,8 +19,8 @@ resource "aws_security_group" "demo_instance_sg" {
 }
 
 resource "aws_instance" "demo_instance" {
-  ami = "ami-0b7dcd6e6fd797935"
-  instance_type = "t2.micro"
+  ami = var.ami_id
+  instance_type = var.instance_type
   user_data = <<-EOF
               #!/bin/bash
               echo "Hello, World" > index.html
